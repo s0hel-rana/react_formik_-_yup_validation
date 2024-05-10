@@ -1,8 +1,10 @@
 import { useFormik } from 'formik';
 import * as yup from 'yup';
-import React from 'react'
+import React, { useState } from 'react'
 
 const SignUp = () => {
+
+    const [toggle, setToggle] = useState(true);
 
     const formik = useFormik({
         initialValues:{
@@ -53,6 +55,14 @@ const SignUp = () => {
             </div>
             <button type="submit">Sign Up</button>
         </form>
+        <br />
+        {toggle && (
+            <div style={{ background: 'red', padding: '10px', margin:'10px' }}>
+                <label htmlFor="name">Name</label><br />
+                <input type='text' name='name' placeholder='Name'/>
+            </div>
+        )}
+        <button onClick={() => {setToggle(!toggle)}} style={{ marginTop: '10px' }}>{toggle ? 'Hide' : 'Show'}</button>
     </div>
   )
 }
