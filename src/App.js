@@ -6,8 +6,8 @@ import FAQS from './components/FAQ/FAQS';
 function App() {
   return (
     <div className="App">
-      {/* <SignUp/> */}
-      <FAQS/>
+      <SignUp/>
+      {/* <FAQS/> */}
     </div>
   );
 }

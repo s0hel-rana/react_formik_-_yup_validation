@@ -9,8 +9,7 @@ const FAQ = ({id,title,desc}) => {
             {toggle && (
                 <p>Ans : {desc}</p>
             )}
-            <button onClick={() => {setToggle(!toggle)}}>{toggle ? "-" : "+"}</button>
-            
+            <button onClick={() => {setToggle(!toggle)}}>{toggle ? "-" : "+"}</button>   
         </div>
     </article>
   )
