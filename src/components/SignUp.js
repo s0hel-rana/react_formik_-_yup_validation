@@ -1,8 +1,11 @@
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import React, { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SignUp = () => {
+
     const [submittedData, setSubmittedData] = useState([]);
 
     const formik = useFormik({
@@ -20,6 +23,7 @@ const SignUp = () => {
             // Update submitted data state
             setSubmittedData([...submittedData, values]);
             console.log(values);
+            toast("Data has been added successfully!");
             resetForm ({ values: "" });
         },
     });
@@ -51,6 +55,7 @@ const SignUp = () => {
                     {renderPasswordError}
                 </div>
                 <button type="submit">Sign Up</button>
+                <ToastContainer />
             </form>
 
             {/* Display submitted data in a table */}
